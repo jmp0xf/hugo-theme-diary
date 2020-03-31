@@ -1,0 +1,29 @@
+
+<script src="{{.Site.BaseURL}}/js/journal.js"></script>
+
+{{ if .Params.highlight }}
+<!-- Load Highlight -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+{{ range .Params.highlight_languages }}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/{{ . }}.min.js"></script>
+{{ end }}
+<script>hljs.initHighlightingOnLoad();</script>
+{{end}}
+
+{{ if .Params.math }}
+<!-- Load KaTeX -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI=" crossorigin="anonymous"></script>
+<script>
+  renderMathInElement(document.body,
+    {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+        ]
+    }
+  );
+</script>
+{{end}}

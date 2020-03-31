@@ -67,7 +67,7 @@ body {
 }
 
 * {
-  color: $deep-dark-accent;
+  // color: $deep-dark-accent; // 避免和 highlight.js 冲突
   line-height: 1.7em;
   word-wrap: break-word;
   box-sizing: border-box;
