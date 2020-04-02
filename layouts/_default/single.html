@@ -20,7 +20,7 @@
                     <div class="post-meta">
                         {{ if .Params.date}}
                         <time itemprop="datePublished">
-                            {{ .PublishDate.Format "2006-01-02 15:04" }}
+                            {{ .PublishDate.Format "2006-01-02" }}
                         </time>
                         {{ end }}
 
@@ -45,7 +45,7 @@
                     {{.Content}}
                     {{ if not .Lastmod.IsZero }}
                     <HR width="100%" id="EOF">
-                    <p style="color:#777;">Last modified on {{ .Page.Lastmod.Format "2006-01-02" }}</p>
+                    <p style="color:#777;">Last modified on {{ .Page.Lastmod.Format "2006-01-02 15:04" }}</p>
                     {{ end }}
                 </div>
             </div>
