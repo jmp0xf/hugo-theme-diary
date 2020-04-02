@@ -1,12 +1,16 @@
 <!-- Please don't remove the information of theme makers. -->
-Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+Hugo Theme
 <br>
-Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+Customized from <a href="https://amazingrise.net" target="_blank" rel="noreferrer noopener">Rise</a>'s <a href="https://github.com/amazingrise/hugo-theme-diary" target="_blank" rel="noreferrer noopener">Diary</a> <br>
 <br>
 <!-- Because this project is under MIT licence. -->
+{{- $current := now.Format "2006" }}
 &copy;
 	{{ if .Site.Copyright }}
 	{{ .Site.Copyright }}
 	{{ else }}
-	{{.Site.Home.Date.Year}} {{.Site.Title}}
+	{{ if ne .Site.Params.since $current }}
+      {{ .Site.Params.since }} - 
+	{{ end }}
+	{{- $current }} {{.Site.Title}}
 	{{ end }}
